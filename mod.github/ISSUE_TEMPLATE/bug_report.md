@@ -11,7 +11,7 @@ assignees: ''
 <!-- Versions used for the bug -->
 Minecraft: 
 Forge: 
-This mod: <!-- RENAME -->
+${project.name}: 
 Modpack: 
 <!-- Do not forget the name of the modpack -->
 
