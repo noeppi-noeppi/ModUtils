@@ -1,3 +1,5 @@
+buildscript { project.ext { MODUTILS_VERSION = "experimental" } }
+
 import io.github.noeppi_noeppi.tools.modgradle.api.Versioning
 import org.apache.maven.artifact.versioning.DefaultArtifactVersion
 import org.apache.maven.artifact.versioning.VersionRange
@@ -9,8 +11,6 @@ import java.util.function.Function
 import java.util.regex.Pattern
 
 buildscript {
-    project.ext { MODUTILS_VERSION = "v3" }
-    
     if (Files.isRegularFile(file('buildscript.gradle').toPath())) {
         println('Loading local buildscript.')
         apply from: "buildscript.gradle", to: buildscript
@@ -300,9 +300,11 @@ if (getMcUpdateTarget() != null) {
     task modutils_removeUpdateProperty {
         doLast {
             if (Files.isRegularFile(project.file('gradle.properties').toPath())) {
-                List<String> properties = new ArrayList<>(Arrays.asList(Files.readString(project.file('gradle.properties').toPath()).split('\n')))
-                properties.removeIf(Pattern.compile('\\s*mcupdate_target\\s*=\\s*' + Pattern.quote(getMcUpdateTarget()) + '\\s*', Pattern.CASE_INSENSITIVE).asMatchPredicate())
-                Files.writeString(project.file('gradle.properties').toPath(), String.join('\n', properties), StandardOpenOption.TRUNCATE_EXISTING)
+                List<String> properties = new ArrayList<>(Arrays.asList(Files.readString(project.file('gradle.properties').toPath()).split('
+')))
+                properties.removeIf(Pattern.compile('\s*mcupdate_target\s*=\s*' + Pattern.quote(getMcUpdateTarget()) + '\s*', Pattern.CASE_INSENSITIVE).asMatchPredicate())
+                Files.writeString(project.file('gradle.properties').toPath(), String.join('
+', properties), StandardOpenOption.TRUNCATE_EXISTING)
             }
         }
     }
