@@ -1,6 +1,5 @@
 buildscript { project.ext { MODUTILS_VERSION = "experimental" } }
 
-
 import io.github.noeppi_noeppi.tools.modgradle.api.Versioning
 import org.apache.maven.artifact.versioning.DefaultArtifactVersion
 import org.apache.maven.artifact.versioning.VersionRange
