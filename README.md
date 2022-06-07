@@ -1,5 +1,7 @@
 # ModUtils
 
+**Moved to https://github.com/ModdingX/ModUtils**
+
 This repository contains gradle scripts, and some data to remove the clutter from your mod's gradle files and make it easy to keep things updated.
 
 *Information about how to update from ModUtils v1 to v2 and from 1.16 to 1.17 can be found [here](./updateV2.md)*
